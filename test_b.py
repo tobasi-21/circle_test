@@ -4,6 +4,8 @@ import pytest
 
 
 def test_b():
-    print('a')
+    a=5
+    b=6
+    a==b
 
 
