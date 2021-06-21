@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - python/install-packages
+      - restore_cache:
+          keys:
+            - dependencies_circle_demo
       - run:
           name: Run django tests
           command: |
