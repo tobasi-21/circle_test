@@ -12,8 +12,8 @@ jobs:
       - checkout
       - run:
           command: |
-          python 
-          print "hello"
+            pip install pytest
+            pytest
 #            pip install pipenv
 #            pipenv install
 #            pipenv run pytest ./test_api/test/test_xxxxx.py --html="./test_api/report/results.html" --junitxml="./test_api/report/results.xml"
