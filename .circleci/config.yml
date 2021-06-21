@@ -13,9 +13,3 @@ jobs:
           command: |
             pip install pytest
             py.test a.py
-      #      pytest
-      # - store_test_results:
-      #     path: test-results
-      # - store_artifacts:
-      #     path: test-results
-      #     destination: tr1
