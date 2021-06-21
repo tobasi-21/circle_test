@@ -24,6 +24,7 @@ jobs:
           # 執行 django 的測試
           command: 
             py.test a.py
+            py.test b.py
           
 
       - save_cache:
