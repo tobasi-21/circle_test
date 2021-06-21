@@ -11,12 +11,18 @@ jobs:
       - python/install-packages
       - restore_cache:
           keys:
-            - dependencies_circle_demo
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run:
           name: Run django tests
           command: |
             pip install pytest
             py.test a.py
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       #      pytest
       # - store_test_results:
       #     path: test-results
