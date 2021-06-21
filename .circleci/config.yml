@@ -1,33 +1,21 @@
-
 version: 2.1
- 
 orbs:
-  python: circleci/python@0.2.1
-  slack: circleci/slack@3.4.2
- 
+  python: circleci/python@1.0.0
 jobs:
-  xxxx-automated-tests:
-    executor: python/default
+  build:
+    docker:
+      - image: cimg/python:3.6.10
+ 
     steps:
       - checkout
+      - python/install-packages
       - run:
+          name: Run django tests
           command: |
             pip install pytest
             pytest
-#            pip install pipenv
-#            pipenv install
-#            pipenv run pytest ./test_api/test/test_xxxxx.py --html="./test_api/report/results.html" --junitxml="./test_api/report/results.xml"
-          name: Test
-      - store_test_results:
-          path: ./test_api/report/
- 
-      - store_artifacts:
-          path: ./test_api/report/
-          destination: reports
- 
-#       - slack/status
- 
-# workflows:
-#   main:
-#     jobs:
-
+      # - store_test_results:
+      #     path: test-results
+      # - store_artifacts:
+      #     path: test-results
+      #     destination: tr1
