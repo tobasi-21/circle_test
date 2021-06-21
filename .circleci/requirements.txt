@@ -1,2 +1,1 @@
-selenium2
 pytest
