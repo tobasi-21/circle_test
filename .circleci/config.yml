@@ -15,9 +15,15 @@ jobs:
 
       - run:
           name: Run django tests
-          command: 
+          command: |
             pip install -r requirements.txt
+          name: Install
+
+       - run:
+          # 執行 django 的測試
+          command: |
             py.test a.py
+          name: Test
 
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
