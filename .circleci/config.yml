@@ -13,7 +13,7 @@ jobs:
           name: Run django tests
           command: |
             pip install pytest
-            python a.py
+            pytest
       #      pytest
       # - store_test_results:
       #     path: test-results
