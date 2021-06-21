@@ -3,9 +3,11 @@ import pytest
 
 
 
-def test_dw():
-    a=5
-    b=6
-    a==b
 
+def inc(x):
+    return x + 1
+
+
+def test_answera():
+    assert inc(5) == 4
 
